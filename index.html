@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bonifacio Allego — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <meta name="description" content="Portfolio of Bonifacio Allego — Computer Science student and aspiring developer." />
+    <meta property="og:title" content="Bonifacio Allego — Portfolio" />
+    <meta property="og:description" content="Projects, skills, and contact information." />
+    <meta property="og:image" content="images/Von.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <canvas id="bgParticles" aria-hidden="true"></canvas>
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <a href="#home" class="skip-link">Skip to content</a>
+    <button id="backToTop" aria-label="Back to top" class="back-to-top" hidden>▲</button>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="#home" class="logo">Von's Portfolio</a>
+        <button class="nav__toggle" aria-label="Toggle navigation">☰</button>
+        <ul class="nav__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button id="themeIconBtn" class="nav__theme-btn" type="button" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">☀</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="home" class="container hero" data-reveal>
+      <div class="hero__media" data-reveal>
+        <div class="orbit" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <img src="images/Von.jpg" alt="Portrait of Bonifacio Allego" loading="eager" width="520" height="520" />
+      </div>
+      <div class="hero__content" data-reveal>
+        <h1 data-editable data-section="hero" data-key="hero-title">Hi, I’m <span class="accent">Bonifacio Allego</span></h1>
+        <p data-editable data-section="hero" data-key="hero-subtitle">I’m a computer science student at Caraga state university.</p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn">View my work</a>
+          <a href="assets/resume/Bonifacio_Allego_Resume.pdf" class="btn btn--secondary" download>Download Resume</a>
+          <button id="hero-edit-toggle" class="btn btn--secondary" type="button" aria-pressed="false">Edit</button>
+        </div>
+      </div>
+    </main>
+
+    <section id="about" class="container section" data-reveal>
+      <h2 class="section__title">About Me <button id="about-edit-toggle" class="btn btn--secondary" aria-pressed="false">Edit</button></h2>
+      <p id="about-text" data-editable data-section="about" data-key="about-text">
+        I’m a Computer Science student currently pursuing my Bachelor’s degree. I have a strong interest in programming, problem-solving, and learning about how technology can be used to solve real-world problems. I enjoy working on small projects to apply what I learn in class, and I'm continuously exploring new tools and technologies. I'm passionate about improving my skills and excited to grow in the field of tech.
+      </p>
+    </section>
+
+    <section id="projects" class="container section" data-reveal>
+      <h2 class="section__title">Projects <button id="projects-edit-toggle" class="btn btn--secondary" aria-pressed="false">Edit</button></h2>
+      <div class="projects">
+        <article class="card" data-reveal>
+          <div class="card__media carousel" aria-hidden="true">
+            <img src="images/project-calculator.jpg" alt="Simple Calculator in Python screenshot" loading="lazy" width="800" height="450" />
+            <!-- Add more images to enable carousel -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-editable data-section="projects" data-key="project1-title">Simple Calculator using Python</h3>
+            <p class="card__text" data-editable data-section="projects" data-key="project1-desc">A basic calculator application created using Python that can perform simple arithmetic operations like addition, subtraction, multiplication, and division.</p>
+            <ul class="tags">
+              <li class="tag">Python</li>
+              <li class="tag">CLI</li>
+              <li class="tag">Beginner</li>
+            </ul>
+            <div class="card__actions">
+              <a class="link" href="https://example.com/calculator" target="_blank" rel="noreferrer noopener">Live</a>
+              <a class="link" href="https://github.com/yourname/calculator" target="_blank" rel="noreferrer noopener">Code</a>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card__media carousel" aria-hidden="true">
+            <img src="images/project-portfolio.jpg" alt="Personal Portfolio Website screenshot" loading="lazy" width="800" height="450" />
+            <!-- Add more images to enable carousel -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-editable data-section="projects" data-key="project2-title">Personal Portfolio Website</h3>
+            <p class="card__text" data-editable data-section="projects" data-key="project2-desc">A simple static website that displays my introduction, skills, and contact information. This project helped me understand the basics of web development.</p>
+            <ul class="tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+            <div class="card__actions">
+              <a class="link" href="https://example.com/portfolio" target="_blank" rel="noreferrer noopener">Live</a>
+              <a class="link" href="https://github.com/yourname/portfolio" target="_blank" rel="noreferrer noopener">Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stats" class="container section" data-reveal>
+      <h2 class="section__title">Stats</h2>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat__num" data-counter target="5">0</div>
+          <div class="stat__label">Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-counter target="3">0</div>
+          <div class="stat__label">Courses Completed</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-counter target="12">0</div>
+          <div class="stat__label">Months Learning</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="container section" data-reveal>
+      <h2 class="section__title">Resume</h2>
+      <p>You can download my resume as a PDF. Last updated: <span id="resume-updated">2025</span>.</p>
+      <a href="assets/resume/Bonifacio_Allego_Resume.pdf" class="btn" download>Download Resume</a>
+    </section>
+
+    <section id="skills" class="container section" data-reveal>
+      <h2 class="section__title">Skills <button id="skills-edit-toggle" class="btn btn--secondary" aria-pressed="false">Edit</button></h2>
+      <div class="skills-grid">
+        <div class="skills-col">
+          <h3 data-editable data-section="skills" data-key="skills-languages-title">Languages</h3>
+          <ul class="skills" data-editable data-section="skills" data-key="skills-languages-list">
+            <li>Python</li>
+            <li>C / C++</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h3 data-editable data-section="skills" data-key="skills-tools-title">Tools</h3>
+          <ul class="skills" data-editable data-section="skills" data-key="skills-tools-list">
+            <li>Git & GitHub</li>
+            <li>VS Code</li>
+            <li>Figma (basic)</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h3 data-editable data-section="skills" data-key="skills-core-title">Core</h3>
+          <ul class="skills" data-editable data-section="skills" data-key="skills-core-list">
+            <li>Algorithms & Logic (basic)</li>
+            <li>Responsive Design</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container section" data-reveal>
+      <h2 class="section__title">Contact <button id="contact-edit-toggle" class="btn btn--secondary" aria-pressed="false">Edit</button></h2>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a class="link" href="mailto:bonifacio.allego@carsu.edu.ph" id="contactEmail" data-editable data-section="contact" data-key="contact-email">bonifacio.allego@carsu.edu.ph</a> <button id="copyEmail" class="btn btn--secondary" type="button">Copy</button></li>
+        <li><strong>Phone:</strong> <a class="link" href="tel:+639300620680" data-editable data-section="contact" data-key="contact-phone">+63 930 062 0680</a></li>
+        <li><strong>Location:</strong> <span data-editable data-section="contact" data-key="contact-location">Agusan del sur, Philippines</span></li>
+        <li><strong>Social:</strong>
+          <a class="link" href="https://github.com/yourname" target="_blank" rel="noreferrer noopener" aria-label="GitHub" data-editable data-section="contact" data-key="contact-github">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.86.12 3.16.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.61-5.47 5.92.43.37.81 1.09.81 2.2v3.26c0 .32.21.69.82.58A12 12 0 0 0 12 .5Z"/></svg>
+          </a>
+          ·
+          <a class="link" href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" data-editable data-section="contact" data-key="contact-linkedin">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5H4.5V23.5H.5V8.5zM8.5 8.5h3.8v2.05h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06v8.94h-4V15.4c0-1.45-.02-3.31-2.02-3.31-2.02 0-2.33 1.58-2.33 3.21v8.2h-4V8.5z"/></svg>
+          </a>
+        </li>
+      </ul>
+      <a href="mailto:bonifacio.allego@carsu.edu.ph" class="btn">Contact Me</a>
+
+      <form class="contact-form" action="mailto:you@example.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can I help?" required maxlength="500" aria-describedby="messageCount"></textarea>
+          <small id="messageCount" aria-live="polite">0 / 500</small>
+        </div>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Bonifacio Allego. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
